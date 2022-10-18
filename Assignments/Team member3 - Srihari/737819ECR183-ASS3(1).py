@@ -4,21 +4,87 @@ import time
 GPIO.setmode(GPIO.BCM)
 GPIO.cleanup()
 
-H1=[20,26,21]
-GPIO.setup(H1, GPIO.OUT)
+M1=[12,6,5]
+M2=[24,23,22]
+M3=[27,18,17]
+M4=[19,16,13]
 
-H=[]
-NUM=[]
-td=1
-def light(H,NUM):
-    GPIO.output(H[0], NUM[0])
-    GPIO.output(H[1], NUM[1])
-    GPIO.output(H[2], NUM[2])
-    time.sleep(td)
+GPIO.setup(M1, GPIO.OUT)
+GPIO.setup(M2, GPIO.OUT)
+GPIO.setup(M3, GPIO.OUT)
+GPIO.setup(M4, GPIO.OUT)
+
+M=[]
+VAL=[]
+td=1.5
+t1=1
+t2=0.1
+def light(M,VAL):
+    GPIO.output(M[0], VAL[0])
+    GPIO.output(M[1], VAL[1])
+    GPIO.output(M[2], VAL[2])
  
 while True:
-   light(H1, [1,0,0])
-   light(H1, [0,1,0])
-   light(H1, [0,0,1])
+   light(M1, [1,0,0])    
+   light(M2, [0,0,1])
+   light(M3, [0,0,1])
+   light(M4, [0,0,1])
    time.sleep(td)
-
+   light(M1, [1,1,0])
+   light(M2, [0,1,1])
+   light(M3, [0,0,1])
+   light(M4, [0,0,1])
+   time.sleep(t1)
+   light(M1, [0,0,0])
+   light(M2, [0,0,0])
+   light(M3, [0,0,0])
+   light(M4, [0,0,0])
+   time.sleep(t2)
+   
+   light(M1, [0,0,1])  
+   light(M2, [1,0,0])
+   light(M3, [0,0,1])
+   light(M4, [0,0,1])
+   time.sleep(td)
+   light(M1, [0,0,1])
+   light(M2, [1,1,0])
+   light(M3, [0,1,1])
+   light(M4, [0,0,1])
+   time.sleep(t1)
+   light(M1, [0,0,0])
+   light(M2, [0,0,0])
+   light(M3, [0,0,0])
+   light(M4, [0,0,0])
+   time.sleep(t2)
+   
+   light(M1, [0,0,1])    
+   light(M2, [0,0,1])
+   light(M3, [1,0,0])
+   light(M4, [0,0,1])
+   time.sleep(td)
+   light(M1, [0,0,1])
+   light(M2, [0,0,1])
+   light(M3, [1,1,0])
+   light(M4, [0,1,1])
+   time.sleep(t1)
+   light(M1, [0,0,0])
+   light(M2, [0,0,0])
+   light(M3, [0,0,0])
+   light(M4, [0,0,0])
+   time.sleep(t2)
+   
+   light(M1, [0,0,1])      
+   light(M2, [0,0,1])
+   light(M3, [0,0,1])
+   light(M4, [1,0,0])
+   time.sleep(td)
+   light(M1, [0,1,1])
+   light(M2, [0,0,1])
+   light(M3, [0,0,1])
+   light(M4, [1,1,0])
+   time.sleep(t1)
+   light(M1, [0,0,0])
+   light(M2, [0,0,0])
+   light(M3, [0,0,0])
+   light(M4, [0,0,0])
+   time.sleep(t2)
